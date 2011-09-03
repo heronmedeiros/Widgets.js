@@ -5,8 +5,9 @@ app.set('views', __dirname + '/views');
 app.register('.html', require('ejs'));
 app.set('view engine', 'html');
 
-app.use(express.bodyParser());
-app.use(express.cookieParser());
+app.use(express.bodyDecoder());
+app.use(express.cookieDecoder());
+  
 app.use(express.session({ secret: 'milfont' }));
 
 app.use(app.router);
